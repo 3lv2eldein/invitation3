@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>دعوة خطوبة - محمد & زهرة</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Cairo','Amiri',serif;background:#0d1117;min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* ─── DOOR SCENE ─── */
+.door-section{position:relative;width:100%;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(180deg,#080f18 0%,#111c2b 40%,#1a2d20 100%);overflow:hidden}
+.night-sky{position:absolute;inset:0;background:radial-gradient(ellipse at 25% 15%,rgba(255,255,255,0.07) 0%,transparent 50%),radial-gradient(ellipse at 75% 25%,rgba(255,215,0,0.04) 0%,transparent 40%)}
+.stars{position:absolute;inset:0;background-image:radial-gradient(1.5px 1.5px at 15px 25px,#fff,transparent),radial-gradient(1px 1px at 55px 80px,#fff,transparent),radial-gradient(2px 2px at 110px 35px,rgba(255,255,255,0.8),transparent),radial-gradient(1px 1px at 175px 130px,#fff,transparent),radial-gradient(1.5px 1.5px at 250px 60px,#fff,transparent),radial-gradient(1px 1px at 320px 110px,rgba(255,255,255,0.7),transparent),radial-gradient(2px 2px at 400px 45px,#fff,transparent),radial-gradient(1px 1px at 480px 155px,rgba(255,255,255,0.6),transparent),radial-gradient(1.5px 1.5px at 560px 80px,#fff,transparent),radial-gradient(1px 1px at 650px 30px,rgba(255,255,255,0.8),transparent),radial-gradient(2px 2px at 730px 120px,#fff,transparent),radial-gradient(1px 1px at 810px 65px,rgba(255,255,255,0.7),transparent),radial-gradient(1.5px 1.5px at 200px 200px,#fff,transparent),radial-gradient(1px 1px at 500px 220px,rgba(255,255,255,0.5),transparent);animation:twinkle 4s ease-in-out infinite alternate}
+@keyframes twinkle{0%{opacity:.5}100%{opacity:1}}
+
+.lang-switch{position:absolute;top:18px;left:18px;z-index:100;background:rgba(0,0,0,.55);border:1px solid rgba(212,175,55,.4);color:#d4af37;padding:7px 15px;border-radius:20px;font-size:13px;cursor:pointer;font-family:'Cairo',sans-serif;transition:all .3s}
+.lang-switch:hover{background:rgba(212,175,55,.2)}
+
+.door-title{position:absolute;top:28px;width:100%;text-align:center;z-index:20;color:#f5e6c8;padding:0 20px}
+.door-title .families{font-size:13px;font-style:italic;opacity:.85;margin-bottom:4px;font-family:'Amiri',serif}
+.door-title .names{font-size:30px;font-weight:700;color:#D4AF37;text-shadow:0 2px 12px rgba(0,0,0,.6),0 0 24px rgba(212,175,55,.3);letter-spacing:3px;font-family:'Amiri',serif}
+.door-title .invite-text{font-size:12px;margin-top:6px;opacity:.8;font-style:italic;font-family:'Amiri',serif}
+
+/* ─── REALISTIC DOOR ─── */
+.door-scene{position:relative;margin-top:95px;display:flex;flex-direction:column;align-items:center}
+
+/* Outer stone surround */
+.stone-surround{
+  position:relative;
+  width:310px;
+  border-radius:160px 160px 0 0;
+  padding:16px 16px 0;
+  background:
+    repeating-linear-gradient(88deg,transparent 0,transparent 22px,rgba(255,255,255,0.018) 22px,rgba(255,255,255,0.018) 23px),
+    linear-gradient(160deg,#C8BFB0 0%,#AEA598 25%,#C4BAA8 50%,#A8A090 75%,#C2B8A5 100%);
+  box-shadow:
+    -6px 0 18px rgba(0,0,0,.5),
+    6px 0 18px rgba(0,0,0,.5),
+    0 -6px 22px rgba(0,0,0,.4),
+    inset 3px 3px 10px rgba(255,255,255,.12),
+    inset -3px -3px 10px rgba(0,0,0,.25);
+}
+
+/* Decorative keystone */
+.keystone{position:absolute;top:-2px;left:50%;transform:translateX(-50%);width:54px;height:38px;background:linear-gradient(180deg,#D0C4B0 0%,#9A9280 100%);clip-path:polygon(18% 0%,82% 0%,100% 100%,0% 100%);z-index:5;box-shadow:0 3px 6px rgba(0,0,0,.35)}
+.keystone::after{content:'✦';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:rgba(255,255,255,.25);font-size:16px}
+
+/* Inner stone ring */
+.stone-inner{
+  position:relative;
+  width:100%;
+  border-radius:148px 148px 0 0;
+  padding:10px 10px 0;
+  background:
+    repeating-linear-gradient(92deg,transparent 0,transparent 18px,rgba(0,0,0,.02) 18px,rgba(0,0,0,.02) 19px),
+    linear-gradient(175deg,#B8AFA0 0%,#A09890 100%);
+  box-shadow:inset 0 6px 16px rgba(0,0,0,.45),inset 3px 0 10px rgba(0,0,0,.2),inset -3px 0 10px rgba(0,0,0,.2)
+}
+
+/* Dark void behind door */
+.door-void{position:relative;width:100%;border-radius:132px 132px 0 0;background:#0A0602;overflow:hidden;height:450px}
+
+/* Warm light that fills when door opens */
+.door-light{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 65%,rgba(255,235,160,1) 0%,rgba(255,210,100,.9) 15%,rgba(255,180,60,.7) 35%,rgba(220,130,20,.35) 65%,transparent 100%);
+  border-radius:inherit;opacity:0;transition:opacity 2.8s ease-in-out;z-index:2
+}
+.door-light.open{opacity:1}
+
+/* Fanlight (decorative arched glass above door) */
+.fanlight{position:absolute;top:0;left:0;right:0;height:95px;border-radius:132px 132px 0 0;overflow:hidden;z-index:9}
+.fanlight svg{position:absolute;top:0;left:0;width:100%;height:100%}
+
+/* ─── DOOR LEAVES ─── */
+.door-leaf{
+  position:absolute;top:0;height:100%;width:50%;z-index:10;
+  /* Rich dark walnut: fine horizontal grain + vertical shimmer */
+  background:
+    repeating-linear-gradient(
+      90.5deg,
+      transparent 0px,transparent 5px,
+      rgba(0,0,0,.032) 5px,rgba(0,0,0,.032) 6px,
+      transparent 6px,transparent 13px,
+      rgba(255,255,255,.012) 13px,rgba(255,255,255,.012) 14px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      transparent 0,transparent 55px,
+      rgba(0,0,0,.038) 55px,rgba(0,0,0,.038) 57px
+    ),
+    linear-gradient(172deg,
+      #3B1A06 0%,#5C2E0E 8%,#4A2208 18%,#6B3812 28%,
+      #3B1A06 38%,#5C2E0E 48%,#4A2208 58%,#6B3812 68%,
+      #3B1A06 78%,#5C2E0E 88%,#4A2208 100%
+    );
+  transition:transform 2.8s cubic-bezier(.42,0,.18,1)
+}
+.door-left{left:0;border-radius:132px 0 0 0;border-right:2.5px solid #1A0800;transform-origin:left center}
+.door-right{right:0;border-radius:0 132px 0 0;border-left:2.5px solid #1A0800;transform-origin:right center}
+.door-left.open{transform:perspective(1000px) rotateY(-80deg)}
+.door-right.open{transform:perspective(1000px) rotateY(80deg)}
+
+/* Subtle top shadow for arch shaping */
+.door-left::before,.door-right::before{content:'';position:absolute;top:0;left:0;right:0;height:60px;background:linear-gradient(180deg,rgba(0,0,0,.18) 0%,transparent 100%);pointer-events:none;z-index:20}
+
+/* ─── DOOR PANELS (3 per leaf) ─── */
+/* Outer molding channel */
+.dp{position:absolute;left:9%;width:82%;border-radius:3px}
+.dp-outer{
+  border:1.5px solid #1E0B02;
+  box-shadow:
+    2px 2px 4px rgba(0,0,0,.55),
+    -1px -1px 0 rgba(255,255,255,.04),
+    inset 0 0 0 1px rgba(255,255,255,.03);
+  background:linear-gradient(145deg,rgba(0,0,0,.3) 0%,rgba(255,255,255,.03) 100%)
+}
+/* Inner raised surface */
+.dp-inner{
+  position:absolute;top:6px;left:6px;right:6px;bottom:6px;border-radius:2px;
+  background:
+    repeating-linear-gradient(
+      90.5deg,
+      transparent 0,transparent 5px,
+      rgba(0,0,0,.025) 5px,rgba(0,0,0,.025) 6px
+    ),
+    linear-gradient(158deg,#5A2A0C 0%,#7A3E18 35%,#5A2A0C 65%,#6B3210 100%);
+  box-shadow:
+    inset 2px 2px 0 rgba(255,255,255,.10),
+    inset -2px -2px 0 rgba(0,0,0,.40),
+    inset 4px 4px 8px rgba(255,255,255,.04),
+    inset -4px -4px 8px rgba(0,0,0,.3)
+}
+/* Optional ornament in middle panel */
+.dp-ornament{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:.18;font-size:20px;color:#D4AF37;pointer-events:none}
+
+.dp-1{top:7%;height:21%}
+.dp-2{top:30%;height:38%}
+.dp-3{top:71%;height:16%}
+
+/* Horizontal rails between panels */
+.dp-rail{position:absolute;left:0;right:0;height:5px;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(255,255,255,.04) 50%,rgba(0,0,0,.35) 100%)}
+.dp-rail-1{top:29%}
+.dp-rail-2{top:70%}
+
+/* ─── BRASS HANDLE ─── */
+.door-handle-wrap{position:absolute;bottom:34%;z-index:15;display:flex;flex-direction:column;align-items:center}
+.door-left .door-handle-wrap{right:7px}
+.door-right .door-handle-wrap{left:7px}
+.handle-plate{
+  width:13px;height:48px;border-radius:6px;
+  background:linear-gradient(90deg,#7A5A0A 0%,#E0BC48 30%,#C8A428 60%,#7A5A0A 100%);
+  box-shadow:1px 1px 4px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.28)
+}
+.handle-knob{
+  width:13px;height:13px;border-radius:50%;margin-top:-3px;
+  background:radial-gradient(circle at 35% 32%,#F0D060,#8B6200);
+  box-shadow:1px 2px 4px rgba(0,0,0,.55),inset -1px -1px 2px rgba(0,0,0,.3)
+}
+
+/* ─── HINGES ─── */
+.hinge{
+  position:absolute;width:11px;height:26px;border-radius:2px;z-index:15;
+  background:linear-gradient(90deg,#6A4A08 0%,#D4AF37 40%,#C8A428 70%,#6A4A08 100%);
+  box-shadow:1px 0 4px rgba(0,0,0,.45)
+}
+.door-left .hinge{right:0}
+.door-right .hinge{left:0}
+.hinge-t{top:13%}
+.hinge-m{top:45%}
+.hinge-b{top:77%}
+
+/* ─── CENTRAL BRASS KNOCKER ─── */
+.knocker-wrap{position:absolute;bottom:47%;left:50%;transform:translateX(-50%);z-index:13;display:flex;flex-direction:column;align-items:center}
+.knocker-backplate{
+  width:22px;height:32px;border-radius:5px 5px 11px 11px;
+  background:linear-gradient(180deg,#E0BC48 0%,#A07818 50%,#E0BC48 100%);
+  box-shadow:0 2px 5px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.25)
+}
+.knocker-ring{
+  width:24px;height:15px;margin-top:5px;
+  border:4px solid #D4AF37;border-radius:50%;background:transparent;
+  box-shadow:0 2px 4px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.2)
+}
+
+/* ─── DOOR THRESHOLD ─── */
+.door-threshold-1{width:295px;height:16px;background:linear-gradient(180deg,#9A8060 0%,#6E5535 50%,#9A8060 100%);border-radius:0 0 4px 4px;box-shadow:0 4px 10px rgba(0,0,0,.45);margin:0 auto}
+.door-threshold-2{width:335px;height:11px;background:linear-gradient(180deg,#7A6040 0%,#503820 100%);border-radius:0 0 4px 4px;box-shadow:0 3px 8px rgba(0,0,0,.35);margin:0 auto}
+
+/* ─── SIDE LANTERNS ─── */
+.lantern-pole{width:3px;height:22px;background:linear-gradient(180deg,#8B6914,#6B4E0A);margin:0 auto}
+.lantern-cap{width:22px;height:8px;background:linear-gradient(180deg,#C8A428,#8B6914);border-radius:2px;margin:0 auto}
+.lantern-body{
+  width:26px;height:42px;margin:0 auto;position:relative;
+  background:linear-gradient(180deg,#8B6914 0%,#D4AF37 25%,#C8A428 65%,#8B6914 100%);
+  border-radius:4px 4px 13px 13px;
+  box-shadow:0 0 12px rgba(255,200,50,.35),0 0 4px rgba(0,0,0,.4)
+}
+.lantern-glow{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:14px;height:22px;background:radial-gradient(ellipse,rgba(255,225,100,.92),rgba(255,160,40,.3));border-radius:50%;animation:flicker 2.2s ease-in-out infinite alternate}
+@keyframes flicker{0%{opacity:.68;transform:translateX(-50%) scale(.9)}100%{opacity:1;transform:translateX(-50%) scale(1.12)}}
+
+/* Petals */
+.petals{position:absolute;inset:0;pointer-events:none;z-index:25;overflow:hidden}
+.petal{position:absolute;width:10px;height:10px;background:radial-gradient(ellipse,rgba(255,160,160,.82),rgba(255,90,90,.35));border-radius:50% 0 50% 50%;animation:fall linear infinite}
+@keyframes fall{0%{transform:translateY(-10px) rotate(0deg) translateX(0);opacity:1}100%{transform:translateY(520px) rotate(740deg) translateX(60px);opacity:0}}
+
+/* Knock button */
+.knock-btn{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);background:rgba(212,175,55,.18);border:1px solid rgba(212,175,55,.5);color:#D4AF37;padding:11px 32px;border-radius:25px;font-size:15px;cursor:pointer;z-index:30;font-family:'Cairo',sans-serif;transition:all .3s;display:flex;align-items:center;gap:8px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.35)}
+.knock-btn:hover{background:rgba(212,175,55,.38);transform:translateX(-50%) scale(1.05)}
+.knock-btn.hidden{opacity:0;pointer-events:none;transition:opacity .5s}
+
+/* ─── DETAILS SECTION ─── */
+.details-section{display:none;min-height:100vh;background:linear-gradient(180deg,#EAE0CE 0%,#F7F2E8 50%,#EAE0CE 100%);padding:40px 20px;position:relative}
+.details-section.active{display:block;animation:fadeIn 1s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.details-inner{max-width:500px;margin:0 auto;text-align:center}
+.details-crest{width:80px;height:90px;margin:0 auto 18px}
+.details-crest svg{width:100%;height:100%}
+.details-title{font-family:'Amiri',serif;margin-bottom:18px}
+.details-title .families-text{font-size:15px;color:#6B5B4F;font-style:italic;margin-bottom:6px}
+.details-title .couple-names{font-size:34px;font-weight:700;color:#8B6914;letter-spacing:3px;margin-bottom:8px}
+.details-title .invite-text{font-size:15px;color:#6B5B4F;font-style:italic}
+.details-title .ceremony-type{font-size:19px;color:#8B6914;margin-top:12px;font-weight:600;font-family:'Cairo',sans-serif}
+.divider{width:60%;height:2px;background:linear-gradient(90deg,transparent,#D4AF37,transparent);margin:14px auto}
+
+/* Countdown */
+.countdown-wrap{display:flex;justify-content:center;gap:14px;margin:18px auto}
+.cd-item{text-align:center;background:rgba(255,255,255,.75);border-radius:12px;padding:12px 14px;min-width:68px;border:1px solid rgba(212,175,55,.22);box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.cd-num{font-size:26px;font-weight:700;color:#8B6914;line-height:1;font-family:'Cairo',sans-serif}
+.cd-label{font-size:10px;color:#B8A88A;letter-spacing:2px;margin-top:4px;font-family:'Cairo',sans-serif}
+
+/* Cards */
+.info-card,.venue-card{background:rgba(255,255,255,.72);border-radius:18px;padding:22px;margin:12px auto;max-width:400px;box-shadow:0 4px 14px rgba(0,0,0,.07);border:1px solid rgba(212,175,55,.2)}
+.info-icon,.venue-icon{width:38px;height:38px;margin:0 auto 8px}
+.info-icon svg,.venue-icon svg{width:100%;height:100%}
+.info-label,.venue-label{font-size:12px;color:#B8A88A;text-transform:uppercase;letter-spacing:3px;margin-bottom:4px;font-family:'Cairo',sans-serif}
+.info-value{font-size:20px;color:#4A4035;font-weight:600;font-family:'Cairo',sans-serif}
+.venue-value{font-size:18px;color:#4A4035;font-weight:600;font-family:'Cairo',sans-serif}
+
+/* RSVP */
+.rsvp-section{margin-top:28px;padding:24px 16px}
+.rsvp-title{font-size:13px;color:#B8A88A;text-transform:uppercase;letter-spacing:4px;margin-bottom:22px;display:inline-block}
+.form-group{margin-bottom:18px;text-align:right}
+.form-group label{display:block;font-size:12px;color:#8B7355;text-transform:uppercase;letter-spacing:2px;margin-bottom:7px;font-family:'Cairo',sans-serif}
+.form-group input[type="text"],.form-group textarea{width:100%;max-width:400px;padding:14px;border:1px solid #D4C4A8;border-radius:10px;background:rgba(255,255,255,.85);font-family:'Cairo',sans-serif;font-size:15px;color:#4A4035;transition:all .3s}
+.form-group input[type="text"]:focus,.form-group textarea:focus{outline:none;border-color:#D4AF37;box-shadow:0 0 10px rgba(212,175,55,.2)}
+.form-group textarea{resize:vertical;min-height:75px}
+.radio-group{display:flex;flex-direction:column;gap:10px;max-width:400px;margin:0 auto}
+.radio-option{display:flex;align-items:center;gap:12px;cursor:pointer;padding:10px;border-radius:10px;transition:background .3s}
+.radio-option:hover{background:rgba(212,175,55,.1)}
+.radio-option input[type="radio"]{width:20px;height:20px;accent-color:#8B6914;cursor:pointer;flex-shrink:0}
+.radio-option span{font-size:15px;color:#4A4035;font-family:'Cairo',sans-serif}
+
+/* WhatsApp submit button */
+.wa-btn{background:linear-gradient(135deg,#22C55E,#16A34A);color:#fff;border:none;padding:14px 38px;border-radius:30px;font-size:17px;font-weight:600;cursor:pointer;margin-top:18px;font-family:'Cairo',sans-serif;box-shadow:0 4px 16px rgba(34,197,94,.35);transition:all .3s;display:inline-flex;align-items:center;gap:10px}
+.wa-btn:hover{transform:translateY(-2px);box-shadow:0 7px 22px rgba(34,197,94,.45)}
+.wa-btn:active{transform:translateY(0)}
+
+.success-msg{display:none;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);color:#15803D;padding:18px;border-radius:14px;margin-top:16px;font-size:16px;font-family:'Cairo',sans-serif}
+.success-msg.show{display:block;animation:fadeIn .5s ease}
+.footer-text{margin-top:36px;font-size:13px;color:#B8A88A;font-family:'Amiri',serif;font-style:italic;padding-bottom:28px}
+
+@media(max-width:480px){
+  .stone-surround{width:270px}
+  .door-void{height:390px}
+  .door-title .names{font-size:24px}
+  .details-title .couple-names{font-size:26px}
+  .door-scene{margin-top:95px}
+  .cd-item{min-width:54px;padding:10px 10px}
+  .cd-num{font-size:20px}
+  .countdown-wrap{gap:10px}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════ DOOR SECTION ══ -->
+<section class="door-section" id="doorSection">
+  <div class="night-sky"></div>
+  <div class="stars"></div>
+  <button class="lang-switch" onclick="toggleLang()">العربية / EN</button>
+
+  <div class="door-title">
+    <div class="families">مع أسرهما</div>
+    <div class="names">محمد &amp; زهرة</div>
+    <div class="invite-text">يدعوانكم لحضور الاحتفال بخطوبتهما</div>
+  </div>
+
+  <div class="door-scene">
+
+    <!-- Stone surround -->
+    <div class="stone-surround">
+      <div class="keystone"></div>
+      <div class="stone-inner">
+        <div class="door-void" id="doorVoid">
+
+          <!-- Warm light -->
+          <div class="door-light" id="doorLight"></div>
+
+          <!-- Fanlight SVG -->
+          <div class="fanlight">
+            <svg viewBox="0 0 278 92" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="fg" cx="50%" cy="0%" r="100%">
+                  <stop offset="0%" stop-color="rgba(255,225,120,0.13)"/>
+                  <stop offset="100%" stop-color="rgba(80,50,10,0.45)"/>
+                </radialGradient>
+              </defs>
+              <path d="M0,92 L0,55 Q139,-8 278,55 L278,92 Z" fill="url(#fg)" stroke="#2A1006" stroke-width="9"/>
+              <!-- Spokes -->
+              <line x1="139" y1="92" x2="22" y2="30" stroke="#4A2208" stroke-width="2.5" opacity=".55"/>
+              <line x1="139" y1="92" x2="72" y2="10" stroke="#4A2208" stroke-width="2.5" opacity=".55"/>
+              <line x1="139" y1="92" x2="139" y2="4" stroke="#4A2208" stroke-width="2.5" opacity=".55"/>
+              <line x1="139" y1="92" x2="206" y2="10" stroke="#4A2208" stroke-width="2.5" opacity=".55"/>
+              <line x1="139" y1="92" x2="256" y2="30" stroke="#4A2208" stroke-width="2.5" opacity=".55"/>
+              <!-- Arc rings -->
+              <path d="M48,92 Q139,28 230,92" fill="none" stroke="#4A2208" stroke-width="2" opacity=".4"/>
+              <path d="M82,92 Q139,50 196,92" fill="none" stroke="#4A2208" stroke-width="2" opacity=".4"/>
+              <!-- Small rosette at top -->
+              <circle cx="139" cy="10" r="5" fill="none" stroke="#7A4A18" stroke-width="2" opacity=".5"/>
+            </svg>
+          </div>
+
+          <!-- Left leaf -->
+          <div class="door-leaf door-left" id="doorLeft">
+            <!-- 3 raised panels -->
+            <div class="dp dp-outer dp-1"><div class="dp-inner"><span class="dp-ornament">✦</span></div></div>
+            <div class="dp dp-outer dp-2"><div class="dp-inner"><span class="dp-ornament">❖</span></div></div>
+            <div class="dp dp-outer dp-3"><div class="dp-inner"></div></div>
+            <!-- Rails -->
+            <div class="dp-rail dp-rail-1"></div>
+            <div class="dp-rail dp-rail-2"></div>
+            <!-- Handle -->
+            <div class="door-handle-wrap"><div class="handle-plate"></div><div class="handle-knob"></div></div>
+            <!-- Hinges -->
+            <div class="hinge hinge-t"></div>
+            <div class="hinge hinge-m"></div>
+            <div class="hinge hinge-b"></div>
+          </div>
+
+          <!-- Right leaf -->
+          <div class="door-leaf door-right" id="doorRight">
+            <div class="dp dp-outer dp-1"><div class="dp-inner"><span class="dp-ornament">✦</span></div></div>
+            <div class="dp dp-outer dp-2"><div class="dp-inner"><span class="dp-ornament">❖</span></div></div>
+            <div class="dp dp-outer dp-3"><div class="dp-inner"></div></div>
+            <div class="dp-rail dp-rail-1"></div>
+            <div class="dp-rail dp-rail-2"></div>
+            <div class="door-handle-wrap"><div class="handle-plate"></div><div class="handle-knob"></div></div>
+            <div class="hinge hinge-t"></div>
+            <div class="hinge hinge-m"></div>
+            <div class="hinge hinge-b"></div>
+          </div>
+
+          <!-- Brass knocker (center seam) -->
+          <div class="knocker-wrap">
+            <div class="knocker-backplate"></div>
+            <div class="knocker-ring"></div>
+          </div>
+
+        </div><!-- /door-void -->
+      </div><!-- /stone-inner -->
+    </div><!-- /stone-surround -->
+
+    <!-- Threshold steps -->
+    <div class="door-threshold-1"></div>
+    <div class="door-threshold-2"></div>
+  </div><!-- /door-scene -->
+
+  <!-- Lanterns left -->
+  <div style="position:absolute;left:calc(50% - 215px);top:52%;transform:translateY(-20%);">
+    <div class="lantern-cap"></div>
+    <div class="lantern-pole"></div>
+    <div class="lantern-body"><div class="lantern-glow"></div></div>
+  </div>
+  <!-- Lanterns left 2 -->
+  <div style="position:absolute;left:calc(50% - 250px);top:62%;transform:translateY(-20%) scale(.8);">
+    <div class="lantern-cap"></div>
+    <div class="lantern-pole"></div>
+    <div class="lantern-body"><div class="lantern-glow"></div></div>
+  </div>
+  <!-- Lanterns right -->
+  <div style="position:absolute;left:calc(50% + 190px);top:52%;transform:translateY(-20%);">
+    <div class="lantern-cap"></div>
+    <div class="lantern-pole"></div>
+    <div class="lantern-body"><div class="lantern-glow"></div></div>
+  </div>
+  <!-- Lanterns right 2 -->
+  <div style="position:absolute;left:calc(50% + 225px);top:62%;transform:translateY(-20%) scale(.8);">
+    <div class="lantern-cap"></div>
+    <div class="lantern-pole"></div>
+    <div class="lantern-body"><div class="lantern-glow"></div></div>
+  </div>
+
+  <div class="petals" id="petals"></div>
+
+  <button class="knock-btn" id="knockBtn" onclick="openDoor()">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-5a2 2 0 014 0v5"/></svg>
+    اضغط هنا للدخول
+  </button>
+</section>
+
+<!-- ══════════════════════════════════════ DETAILS SECTION ══ -->
+<section class="details-section" id="detailsSection">
+  <div class="details-inner">
+
+    <!-- Crest -->
+    <div class="details-crest">
+      <svg viewBox="0 0 80 90">
+        <defs><linearGradient id="cg2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#D4AF37"/><stop offset="100%" stop-color="#8B6914"/></linearGradient></defs>
+        <path d="M20,18 L27,5 L33,14 L40,3 L47,14 L53,5 L60,18 Z" fill="url(#cg2)" stroke="#6B4E0A" stroke-width="1"/>
+        <path d="M12,25 Q40,18 68,25 L68,55 Q40,82 12,55 Z" fill="#1a365d" stroke="url(#cg2)" stroke-width="2.5"/>
+        <text x="40" y="52" text-anchor="middle" fill="#D4AF37" font-size="24" font-family="serif" font-weight="bold">M</text>
+        <text x="40" y="65" text-anchor="middle" fill="#D4AF37" font-size="14" font-family="serif">&amp;</text>
+        <text x="40" y="76" text-anchor="middle" fill="#D4AF37" font-size="18" font-family="serif">Z</text>
+        <path d="M12,25 Q5,38 12,50" fill="none" stroke="url(#cg2)" stroke-width="2"/>
+        <path d="M68,25 Q75,38 68,50" fill="none" stroke="url(#cg2)" stroke-width="2"/>
+      </svg>
+    </div>
+
+    <div class="details-title">
+      <div class="families-text">مع أسرهما</div>
+      <div class="couple-names">محمد &amp; زهرة</div>
+      <div class="invite-text">يدعوانكم لحضور الاحتفال بخطوبتهما</div>
+      <div class="ceremony-type">حفل الخطوبة</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Countdown -->
+    <div class="countdown-wrap">
+      <div class="cd-item"><div class="cd-num" id="cd-days">--</div><div class="cd-label" id="lbl-days">أيام</div></div>
+      <div class="cd-item"><div class="cd-num" id="cd-hours">--</div><div class="cd-label" id="lbl-hours">ساعات</div></div>
+      <div class="cd-item"><div class="cd-num" id="cd-mins">--</div><div class="cd-label" id="lbl-mins">دقائق</div></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Date -->
+    <div class="info-card">
+      <div class="info-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#8B6914" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+      </div>
+      <div class="info-label" id="lbl-date">التاريخ</div>
+      <div class="info-value" id="val-date">29 مايو 2026</div>
+    </div>
+
+    <!-- Time -->
+    <div class="info-card">
+      <div class="info-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#8B6914" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+        </svg>
+      </div>
+      <div class="info-label" id="lbl-time">الوقت</div>
+      <div class="info-value" id="val-time">8:00 مساءً</div>
+    </div>
+
+    <!-- Venue -->
+    <div class="venue-card">
+      <div class="venue-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#8B6914" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-5a2 2 0 014 0v5"/>
+        </svg>
+      </div>
+      <div class="venue-label" id="lbl-venue">المكان</div>
+      <div class="venue-value" id="val-venue">أمام منزل العروسة</div>
+    </div>
+
+    <!-- RSVP -->
+    <div class="rsvp-section">
+      <div class="rsvp-title" id="lbl-rsvp">تأكيد الحضور</div>
+      <form id="rsvpForm" onsubmit="handleRSVP(event)">
+        <div class="form-group">
+          <label id="lbl-name">الاسم الكامل</label>
+          <input type="text" name="name" id="inp-name" placeholder="اكتب اسمك..." required>
+        </div>
+        <div class="form-group">
+          <label id="lbl-attend">الحضور</label>
+          <div class="radio-group">
+            <label class="radio-option"><input type="radio" name="attendance" value="yes" required><span id="opt-yes">نعم، سأكون هناك 🙌</span></label>
+            <label class="radio-option"><input type="radio" name="attendance" value="no"><span id="opt-no">للأسف لن أتمكن من الحضور</span></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label id="lbl-msg">رسالة (اختياري)</label>
+          <textarea name="message" id="inp-msg" placeholder="أطيب الأماني..."></textarea>
+        </div>
+        <button type="submit" class="wa-btn">
+          <!-- WhatsApp icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span id="btn-send">إرسال عبر واتساب</span>
+        </button>
+      </form>
+      <div class="success-msg" id="successMsg">✅ شكراً! سيتم فتح واتساب الآن لإرسال تأكيدك 💚</div>
+    </div>
+
+    <div class="footer-text" id="footer-txt">محمد &amp; زهرة · 2026</div>
+  </div>
+</section>
+
+<script>
+/* ── Language ── */
+let isEn = false;
+const T = {
+  ar:{
+    families:'مع أسرهما', names:'محمد & زهرة', invite:'يدعوانكم لحضور الاحتفال بخطوبتهما',
+    knock:'اضغط هنا للدخول', ceremony:'حفل الخطوبة',
+    dateL:'التاريخ', dateV:'29 مايو 2026',
+    timeL:'الوقت', timeV:'8:00 مساءً',
+    venueL:'المكان', venueV:'أمام منزل العروسة',
+    rsvp:'تأكيد الحضور', nameL:'الاسم الكامل', nameP:'اكتب اسمك...',
+    attendL:'الحضور', yes:'نعم، سأكون هناك 🙌', no:'للأسف لن أتمكن من الحضور',
+    msgL:'رسالة (اختياري)', msgP:'أطيب الأماني...',
+    send:'إرسال عبر واتساب',
+    ok:'✅ شكراً! سيتم فتح واتساب الآن لإرسال تأكيدك 💚',
+    daysL:'أيام', hoursL:'ساعات', minsL:'دقائق',
+    footer:'محمد & زهرة · 2026', dir:'rtl'
+  },
+  en:{
+    families:'Together with their families', names:'Mohamed & Zahra', invite:'invite you to the celebration of their engagement',
+    knock:'Click here to enter', ceremony:'Engagement Ceremony',
+    dateL:'DATE', dateV:'May 29, 2026',
+    timeL:'TIME', timeV:'8:00 PM',
+    venueL:'VENUE', venueV:"In front of the bride's house",
+    rsvp:'RSVP', nameL:'FULL NAME', nameP:'Your name...',
+    attendL:'ATTENDANCE', yes:"YES, I'LL BE THERE 🙌", no:'REGRETFULLY UNABLE TO ATTEND',
+    msgL:'MESSAGE (OPTIONAL)', msgP:'Your warm wishes...',
+    send:'SEND VIA WHATSAPP',
+    ok:"✅ Thank you! WhatsApp will open to send your RSVP 💚",
+    daysL:'days', hoursL:'hours', minsL:'min',
+    footer:'Mohamed & Zahra · 2026', dir:'ltr'
+  }
+};
+
+function toggleLang(){
+  isEn=!isEn;
+  const t=isEn?T.en:T.ar;
+  document.querySelector('.door-title .families').textContent=t.families;
+  document.querySelector('.door-title .names').textContent=t.names;
+  document.querySelector('.door-title .invite-text').textContent=t.invite;
+  document.querySelector('#knockBtn').innerHTML=`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-5a2 2 0 014 0v5"/></svg> ${t.knock}`;
+  document.querySelector('.details-title .families-text').textContent=t.families;
+  document.querySelector('.details-title .couple-names').textContent=t.names;
+  document.querySelector('.details-title .invite-text').textContent=t.invite;
+  document.querySelector('.details-title .ceremony-type').textContent=t.ceremony;
+  document.getElementById('lbl-date').textContent=t.dateL;
+  document.getElementById('val-date').textContent=t.dateV;
+  document.getElementById('lbl-time').textContent=t.timeL;
+  document.getElementById('val-time').textContent=t.timeV;
+  document.getElementById('lbl-venue').textContent=t.venueL;
+  document.getElementById('val-venue').textContent=t.venueV;
+  document.getElementById('lbl-rsvp').textContent=t.rsvp;
+  document.getElementById('lbl-name').textContent=t.nameL;
+  document.getElementById('inp-name').placeholder=t.nameP;
+  document.getElementById('lbl-attend').textContent=t.attendL;
+  document.getElementById('opt-yes').textContent=t.yes;
+  document.getElementById('opt-no').textContent=t.no;
+  document.getElementById('lbl-msg').textContent=t.msgL;
+  document.getElementById('inp-msg').placeholder=t.msgP;
+  document.getElementById('btn-send').textContent=t.send;
+  document.getElementById('successMsg').textContent=t.ok;
+  document.getElementById('lbl-days').textContent=t.daysL;
+  document.getElementById('lbl-hours').textContent=t.hoursL;
+  document.getElementById('lbl-mins').textContent=t.minsL;
+  document.getElementById('footer-txt').textContent=t.footer;
+  document.documentElement.dir=t.dir;
+  document.documentElement.lang=isEn?'en':'ar';
+}
+
+/* ── Open door animation ── */
+function openDoor(){
+  document.getElementById('doorLeft').classList.add('open');
+  document.getElementById('doorRight').classList.add('open');
+  document.getElementById('doorLight').classList.add('open');
+  document.getElementById('knockBtn').classList.add('hidden');
+  // Petals
+  const pc=document.getElementById('petals');
+  for(let i=0;i<28;i++){
+    setTimeout(()=>{
+      const p=document.createElement('div');
+      p.className='petal';
+      p.style.cssText=`left:${Math.random()*100}%;animation-duration:${(Math.random()*3+2).toFixed(1)}s;animation-delay:${(Math.random()*2).toFixed(1)}s`;
+      pc.appendChild(p);
+      setTimeout(()=>p.remove(),5500);
+    },i*180);
+  }
+  setTimeout(()=>{
+    document.getElementById('doorSection').style.display='none';
+    document.getElementById('detailsSection').classList.add('active');
+    updateCountdown();
+    window.scrollTo(0,0);
+  },3600);
+}
+
+/* ── Countdown ── */
+function updateCountdown(){
+  const event=new Date('2026-05-29T20:00:00');
+  const now=new Date();
+  const diff=event-now;
+  if(diff<=0){
+    document.querySelector('.countdown-wrap').innerHTML='<div style="font-size:20px;color:#8B6914;font-family:Cairo,sans-serif">🎉 حفل اليوم!</div>';
+    return;
+  }
+  const d=Math.floor(diff/864e5);
+  const h=Math.floor((diff%864e5)/36e5);
+  const m=Math.floor((diff%36e5)/6e4);
+  document.getElementById('cd-days').textContent=String(d).padStart(2,'0');
+  document.getElementById('cd-hours').textContent=String(h).padStart(2,'0');
+  document.getElementById('cd-mins').textContent=String(m).padStart(2,'0');
+}
+setInterval(updateCountdown,60000);
+
+/* ── WhatsApp RSVP ── */
+function handleRSVP(e){
+  e.preventDefault();
+  const fd=new FormData(e.target);
+  const name=fd.get('name');
+  const attend=fd.get('attendance');
+  const msg=fd.get('message');
+  const t=isEn?T.en:T.ar;
+  let txt;
+  if(isEn){
+    txt=`Hello! I'm ${name}.\nI am ${attend==='yes'?'✅ happy to confirm my attendance':'❌ regretfully unable to attend'} at Mohamed & Zahra's engagement ceremony on May 29, 2026.`;
+    if(msg) txt+=`\n\n"${msg}"`;
+  } else {
+    txt=`السلام عليكم، أنا ${name}.\n${attend==='yes'?'✅ يسعدني تأكيد حضوري في حفل خطوبة محمد وزهرة بتاريخ 29 مايو 2026 إن شاء الله 🎊':'❌ للأسف لن أتمكن من الحضور في حفل خطوبة محمد وزهرة'}`;
+    if(msg) txt+=`\n\n"${msg}"`;
+  }
+  const waUrl='https://wa.me/201017886432?text='+encodeURIComponent(txt);
+  window.open(waUrl,'_blank');
+  document.getElementById('successMsg').classList.add('show');
+  e.target.reset();
+}
+</script>
+</body>
+</html>
